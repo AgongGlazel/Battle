@@ -1,0 +1,48 @@
+
+package battle.z;
+
+public class Knight extends Character{
+      
+    protected int Durability = 20;
+    protected int currentDurability;
+    
+    public Knight(String n,int d, int i){
+        super(n);
+        strength = 25;
+        this.Durability = 20;
+        this.currentDurability = Durability;
+    }
+    
+    public int currentDurability(){
+        return currentDurability;
+    }
+    
+    public void minusDurability(int minus){
+           currentDurability = currentDurability - minus;
+           if(currentDurability <= 0){
+               currentDurability = 0;
+           }
+    }
+    
+    public int block(){
+        for(Durability = 20; Durability > 0; Durability =- 10){
+        if(dice.Roll() == 1){
+        Durability = Durability - 10;
+        }
+         return damage;
+    } return damage;
+    }
+        
+    
+    
+    
+    @Override
+     public void wound(int damage) {
+        CurrentLife = CurrentLife - (damage-block());
+        if (CurrentLife <= 0) {
+            CurrentLife = 0;
+        }
+    }
+    
+    
+}
