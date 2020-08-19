@@ -1,0 +1,34 @@
+
+package battle.z;
+
+
+public class Mage extends Character {
+
+    private int Mana;
+    int currentMana;
+    public Mage(String n, int s, int d) {
+        super(n);
+        intelligence = 25;
+        this.Mana = 20;
+        this.currentMana = Mana;
+        this.intelligence = 25;
+    }
+
+    public int currentMana() {
+        return currentMana;
+    }
+    
+    public void minusMana(int minus){
+        currentMana = currentMana - minus;
+        if(currentMana <= 0){
+            currentMana = 0;
+        }
+    }
+
+    public int fireball() {
+        return dice.Roll() + intelligence;
+        
+     
+    
+    }
+}
