@@ -1,0 +1,34 @@
+
+package battle.z;
+
+public class Thief extends Character {
+
+    protected int Stamina;
+    int currentStamina;
+
+    public Thief(String n, int s, int i) {
+        super(n);
+        dexterity = 25;
+        this.Stamina = 20;
+        this.currentStamina = Stamina;
+        this.dexterity = 25;
+    }
+
+    public int currentStamina() {
+        return currentStamina;
+    }
+
+    public void minusStamina(int minus) {
+        currentStamina = currentStamina - minus;
+        if (currentStamina <= 0) {
+            currentStamina = 0;
+        }
+
+    }
+
+    public int evade() {
+        return dice.Roll() + dexterity;
+    }
+
+}
+
